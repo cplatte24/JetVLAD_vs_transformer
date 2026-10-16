@@ -1,0 +1,25 @@
+# --- data: far too large for GitHub (the training file alone is 422 MB) ------
+*.root
+training_data/
+validation_data/
+testing_data/
+
+# --- run outputs ------------------------------------------------------------
+output_files/
+training_runs/
+logs/
+*.pth
+*_roc.txt
+*_pr.txt
+*.pdf
+*.png
+
+# --- python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*~
+\#*\#
+
+# --- os ---------------------------------------------------------------------
+.DS_Store

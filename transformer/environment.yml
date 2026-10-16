@@ -1,0 +1,26 @@
+name: netvlad-pytorch
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - matplotlib
+  - scipy
+  - notebook
+  - scikit-learn
+  - pytorch
+  - pip:
+      - uproot
+      - awkward
+# Same environment as ../JetVLAD/NetVLAD-tagger-pytorch, with awkward added
+# (the ROOT loader reads jagged branches through it; pip installs it with
+# uproot anyway, so an existing netvlad-pytorch env probably has it already).
+#
+# Requirements for this model: torch >= 1.9 (batch_first / norm_first in
+# nn.TransformerEncoderLayer; tested on 2.x), uproot >= 4, awkward >= 2.
+#
+# If `conda env create` stalls on "Solving environment", the `pytorch` conda
+# channel has no matching macOS build. Drop `- pytorch` from the list above and
+# add `- torch>=2.1` under `pip:` instead.
